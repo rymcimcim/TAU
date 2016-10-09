@@ -1,2 +1,2 @@
 # TAU
-Testy Java
+Testy Java - Jędrzej Jakubowski
