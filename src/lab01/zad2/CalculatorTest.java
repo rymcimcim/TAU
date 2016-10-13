@@ -16,7 +16,7 @@ public class CalculatorTest {
 	
 	@Test
 	public void subTest(){
-		assertEquals(-1, calculator.sub(1, 2), 0.001);
+		assertNotEquals(-2, calculator.sub(1, 2), 0.001);
 	}
 	
 	@Test
@@ -34,8 +34,8 @@ public class CalculatorTest {
 		assertTrue("First number less than second!", calculator.greater(5, 4));
 	}
 	
-//	@Test(expected = ArithmeticException.class)
+	@Test
 	public void divExceptionTest(){
-		assertEquals(Double.NaN, calculator.div(2, 0), 0.001);
+		assertEquals(Double.POSITIVE_INFINITY, calculator.div(2, 0), 0.001);
 	}
 }

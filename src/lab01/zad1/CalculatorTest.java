@@ -35,8 +35,8 @@ public class CalculatorTest {
 		assertTrue("First number less than second!", calculator.greater(5, 4));
 	}
 	
-	@Test(expected = ArithmeticException.class)
+	@Test
 	public void divExceptionTest(){
-		assertEquals("ArithmeticException was not thrown!", calculator.div(2, 0), 2);
+		assertEquals("ArithmeticException was not thrown!", calculator.div(2, 0), 0);
 	}
 }
