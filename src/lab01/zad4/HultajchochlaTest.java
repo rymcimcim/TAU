@@ -7,9 +7,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-
-import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -35,7 +32,7 @@ public class HultajchochlaTest {
 	@Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                 { 1, null }, { 2, null }, { 55, 5 }, { 999, 99 }, { 2222, 222 }, { 2324, 224 }, { 1029384756, 187654329 }
+                 { 1, null }, { 2, null }, { 55, 5 }, { 999, 99 }, { 2222, 222 }, { 2324, 224 }, { 102938475, 18765432 }
            });
     }
 	
