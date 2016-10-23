@@ -75,6 +75,7 @@ public class Implementacja implements IPsikus {
     			indexArray.add(i);
     		}
     	}
+
     	Random generator = new Random();
     	int randomArrayIndex = generator.nextInt(indexArray.size());
     	int numberToChange = liczbaArray[indexArray.get(randomArrayIndex)];
@@ -100,6 +101,7 @@ public class Implementacja implements IPsikus {
     	
     	return liczbaArray;
     }
+
 
 	public Integer nieksztaltek(Integer liczba) {
 		String liczbaString = Integer.toString(liczba);
