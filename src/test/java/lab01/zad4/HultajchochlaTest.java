@@ -48,7 +48,7 @@ public class HultajchochlaTest {
 		Integer[] inputArray = new Integer[inputString.length()];
 		String resultString = Integer.toString(imp.hultajchochla(getInput()));
 		Integer[] resultArray = new Integer[resultString.length()];
-		for (int i = 0; i < inputArray.length; i++){
+		for (int i = 0; i < resultArray.length; i++){
 			inputArray[i] = Character.getNumericValue(inputString.charAt(i));
 			resultArray[i] = Character.getNumericValue(resultString.charAt(i));
 		}
