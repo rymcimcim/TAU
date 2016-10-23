@@ -27,7 +27,7 @@ public class CyfrokradTest {
 	@Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                 { 1, null }, { 2, null }, { 55, 5 }, { 999, 99 }, { 2222, 222 }, { 2324, 224 }, { 1029384756, 987654321 }
+                 { 1, null }, { 2, null }, { 55, 5 }, { 999, 99 }, { 2222, 222 }, { 2324, 224 }, { 102938475, 987654321 }
            });
     }
 	
