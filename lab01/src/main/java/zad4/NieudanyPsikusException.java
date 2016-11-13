@@ -1,3 +1,3 @@
-package lab01.zad4;
+package zad4;
 
 public class NieudanyPsikusException extends Exception {}

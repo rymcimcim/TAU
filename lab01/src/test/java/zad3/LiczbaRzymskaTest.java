@@ -1,8 +1,10 @@
-package lab01.zad3;
+package zad3;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import zad3.LiczbaRzymska;
 
 public class LiczbaRzymskaTest {
 	public LiczbaRzymskaTest(){}

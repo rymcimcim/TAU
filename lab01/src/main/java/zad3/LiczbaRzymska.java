@@ -1,4 +1,4 @@
-package lab01.zad3;
+package zad3;
 
 import java.util.TreeMap;
 

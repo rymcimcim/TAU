@@ -1,4 +1,4 @@
-package lab01.zad4;
+package zad4;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

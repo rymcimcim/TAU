@@ -1,4 +1,4 @@
-package lab01.zad2;
+package zad2;
 
 
 

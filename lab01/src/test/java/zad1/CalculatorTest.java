@@ -1,10 +1,12 @@
-package lab01.zad1;
+package zad1;
 
 
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import zad1.Calculator;
 
 public class CalculatorTest {
 	

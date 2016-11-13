@@ -1,8 +1,11 @@
-package lab01.zad2;
+package zad2;
 
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import zad2.Calculator;
+
 import java.lang.Double;
 
 public class CalculatorTest {

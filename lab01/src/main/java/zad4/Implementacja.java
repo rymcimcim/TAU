@@ -1,4 +1,4 @@
-package lab01.zad4;
+package zad4;
 
 import java.util.ArrayList;
 import java.util.Arrays;

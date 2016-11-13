@@ -1,4 +1,4 @@
-package lab01.zad4;
+package zad4;
 
 public interface IPsikus {
 	Integer cyfrokrad(Integer liczba);

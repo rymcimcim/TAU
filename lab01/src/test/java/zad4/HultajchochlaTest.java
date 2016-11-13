@@ -1,4 +1,4 @@
-package lab01.zad4;
+package zad4;
 
 import static org.junit.Assert.*;
 
@@ -13,6 +13,9 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import zad4.Implementacja;
+import zad4.NieudanyPsikusException;
 
 @RunWith(Parameterized.class)
 public class HultajchochlaTest {
