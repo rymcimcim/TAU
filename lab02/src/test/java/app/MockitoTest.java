@@ -29,19 +29,30 @@ public class MockitoTest {
 	private final String INVALID_MESSAGE = "ab";
 
 	@Test
-	public void checkSendingMessage() throws MalformedRecipientException {
-
-		when(mock.send(INVALID_SERVER, INVALID_MESSAGE)).thenReturn(SendingStatus.SENDING_ERROR);    
-	    when(mock.send(VALID_SERVER, VALID_MESSAGE)).thenReturn(SendingStatus.SENT);
-	    when(mock.send(INVALID_SERVER, VALID_MESSAGE)).thenThrow(new MalformedRecipientException());
-	    when(mock.send(VALID_SERVER, INVALID_MESSAGE)).thenThrow(new MalformedRecipientException());
-	       
+	public void checkSendingMessageInvalidServerInvalidMessage() throws MalformedRecipientException {
+		when(mock.send(INVALID_SERVER, INVALID_MESSAGE)).thenReturn(SendingStatus.SENDING_ERROR);
 	    assertEquals(1,Messenger.sendMessage(INVALID_SERVER, INVALID_MESSAGE));
-	    assertEquals(0,Messenger.sendMessage(VALID_SERVER, VALID_MESSAGE));
-	    assertEquals(2,Messenger.sendMessage(INVALID_SERVER, VALID_MESSAGE));
-	    assertEquals(2,Messenger.sendMessage(VALID_SERVER, INVALID_MESSAGE));
-	    
 		verify(mock);	
-			
+	}
+	
+	@Test
+	public void checkSendingMessageValidServerValidMessage() throws MalformedRecipientException {   
+	    when(mock.send(VALID_SERVER, VALID_MESSAGE)).thenReturn(SendingStatus.SENT);
+	    assertEquals(0,Messenger.sendMessage(VALID_SERVER, VALID_MESSAGE));
+		verify(mock);		
+	}
+	
+	@Test
+	public void checkSendingMessageInvalidServerValidMessage() throws MalformedRecipientException {
+	    when(mock.send(INVALID_SERVER, VALID_MESSAGE)).thenThrow(new MalformedRecipientException());
+	    assertEquals(2,Messenger.sendMessage(INVALID_SERVER, VALID_MESSAGE));
+		verify(mock);
+	}
+	
+	@Test
+	public void checkSendingMessageValidServerInvalidMessage() throws MalformedRecipientException {
+	    when(mock.send(VALID_SERVER, INVALID_MESSAGE)).thenThrow(new MalformedRecipientException());
+	    assertEquals(2,Messenger.sendMessage(VALID_SERVER, INVALID_MESSAGE));
+		verify(mock);
 	}
 }

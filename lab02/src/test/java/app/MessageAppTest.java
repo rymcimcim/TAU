@@ -18,24 +18,36 @@ public class MessageAppTest {
 	private final String INVALID_MESSAGE = "ab";
 
 	@Test
-	public void checkSendingMessage() {
-
+	public void checkSendingMessageInvalidServerValidMessage() {
 		assertEquals(1, messenger.sendMessage(INVALID_SERVER, VALID_MESSAGE));
+	}
+	
+	@Test
+	public void checkSendingMessageValidServerInvalidMessage() {
 		assertEquals(2, messenger.sendMessage(VALID_SERVER, INVALID_MESSAGE));
-
+	}
+	
+	@Test
+	public void checkSendingMessageValidServerValidMessage() {
 		assertThat(messenger.sendMessage(VALID_SERVER, VALID_MESSAGE),
 				either(equalTo(0)).or(equalTo(1)));
+	}
+	
+	@Test
+	public void checkSendingMessageInvalidServerInvalidMessage() {
 		assertEquals(2, messenger.sendMessage(INVALID_SERVER, INVALID_MESSAGE));
 	}
 	
 	@Test
-	public void checkTestConnection() {
-
+	public void checkTestConnectionInvalidServer() {
 		assertEquals(1, messenger.testConnection(INVALID_SERVER));
-		assertEquals(0, messenger.testConnection(VALID_SERVER));
-
-		assertThat(messenger.testConnection(VALID_SERVER), either(equalTo(0)).or(equalTo(1)));
 		assertThat(messenger.testConnection(INVALID_SERVER), either(equalTo(0)).or(equalTo(1)));
+	}
+	
+	@Test
+	public void checkTestConnectionValidServer() {
+		assertEquals(0, messenger.testConnection(VALID_SERVER));
+		assertThat(messenger.testConnection(VALID_SERVER), either(equalTo(0)).or(equalTo(1)));
 	}
 }
 
