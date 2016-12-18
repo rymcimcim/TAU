@@ -18,5 +18,5 @@ Then comparison should give true
 When set arguments to 4.00 and 4.01
 Then comparison should give false
 
-When 1 gets divided by 0
-Then infinity is returned
+When 1 gets divided by ZERO
+Then the result is infinity
