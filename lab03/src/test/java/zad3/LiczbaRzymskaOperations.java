@@ -26,7 +26,7 @@ public class LiczbaRzymskaOperations {
 		assertEquals(roman, liczba.toString());
 	}
 	
-	@When("set argument $outOfRangeNumber")
+	@When("set parameter to $outOfRangeNumber")
 	public void setOutOfRangeNumber(int arabic){
 		liczba.setNumber(arabic);
 	}
