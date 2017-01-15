@@ -19,7 +19,7 @@ public class SeleniumConfig extends JUnitStories {
 	
 	private WebDriverProvider driverProvider = new TypeWebDriverProvider(ChromeDriver.class);
     private static final String DRIVERKEY = "webdriver.chrome.driver";
-    private static final String DRIVERVALUE = "D://Downloads//chromedriver.exe";
+    private static final String DRIVERVALUE = "/Users/kuba/Dev/chromedriver/chromedriver";
 
     private WebDriverSteps lifecycleSteps = new PerStoriesWebDriverSteps(driverProvider);
     private SeleniumPages pages = new SeleniumPages(driverProvider);
