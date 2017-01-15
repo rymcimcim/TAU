@@ -1,21 +1,36 @@
 package lab04;
 
-import java.util.*;
-import org.jbehave.core.*;
-import org.jbehave.core.configuration.*;
-import org.jbehave.core.embedder.*;
-import org.jbehave.core.io.*;
-import org.jbehave.core.junit.*;
-import org.jbehave.core.reporters.*;
-import org.jbehave.core.steps.*;
-import org.jbehave.web.selenium.*;
-import com.google.common.util.concurrent.*;
+import static java.util.Arrays.asList;
+import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 
-import org.openqa.selenium.chrome.*;
-import static java.util.Arrays.*;
-import static org.jbehave.core.io.CodeLocations.*;
+import java.util.List;
 
-public class SeleniumConfig extends JUnitStories {
+import org.jbehave.core.Embeddable;
+import org.jbehave.core.configuration.Configuration;
+import org.jbehave.core.embedder.Embedder;
+import org.jbehave.core.io.LoadFromClasspath;
+import org.jbehave.core.io.StoryFinder;
+import org.jbehave.core.junit.JUnitStories;
+import org.jbehave.core.reporters.Format;
+import org.jbehave.core.reporters.StoryReporterBuilder;
+import org.jbehave.core.steps.InjectableStepsFactory;
+import org.jbehave.core.steps.InstanceStepsFactory;
+import org.jbehave.core.steps.SilentStepMonitor;
+import org.jbehave.web.selenium.ContextView;
+import org.jbehave.web.selenium.LocalFrameContextView;
+import org.jbehave.web.selenium.PerStoriesWebDriverSteps;
+import org.jbehave.web.selenium.SeleniumConfiguration;
+import org.jbehave.web.selenium.SeleniumContext;
+import org.jbehave.web.selenium.SeleniumStepMonitor;
+import org.jbehave.web.selenium.TypeWebDriverProvider;
+import org.jbehave.web.selenium.WebDriverProvider;
+import org.jbehave.web.selenium.WebDriverScreenshotOnFailure;
+import org.jbehave.web.selenium.WebDriverSteps;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.google.common.util.concurrent.MoreExecutors;
+
+public class SeleniumTest extends JUnitStories {
 	
 	private WebDriverProvider driverProvider = new TypeWebDriverProvider(ChromeDriver.class);
     private static final String DRIVERKEY = "webdriver.chrome.driver";
@@ -26,7 +41,7 @@ public class SeleniumConfig extends JUnitStories {
     private SeleniumContext context = new SeleniumContext();
     private ContextView contextView = new LocalFrameContextView().sized(500, 100);
 
-    public SeleniumConfig() {
+    public SeleniumTest() {
         System.setProperty(DRIVERKEY, DRIVERVALUE);
         if (lifecycleSteps instanceof PerStoriesWebDriverSteps)
             configuredEmbedder().useExecutorService(MoreExecutors.sameThreadExecutor());
