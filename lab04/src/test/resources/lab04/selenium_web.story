@@ -24,12 +24,10 @@ Then should get home title
 
 Scenario: After Logout
 
-Given a HomePage
 When click on logout button
 Then should get logout title
 
 Scenario: Go back to SignIn
 
-Given a LogoutPage
 When click on relog button
 Then should get signin title

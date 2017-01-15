@@ -3,9 +3,11 @@ package lab04;
 import org.jbehave.web.selenium.*;
 
 import lab04.components.LogoutComponent;
+import lab04.components.SidePanel;
 import lab04.pages.HomePage;
 import lab04.pages.LogoutPage;
 import lab04.pages.SignInPage;
+import lab04.pages.SubpagesPage;
 
 public class SeleniumPages {
 
@@ -14,6 +16,8 @@ public class SeleniumPages {
     private LogoutPage logoutPage;
     private SignInPage signInPage;
     private LogoutComponent logoutComponent;
+    private SidePanel sidePanel;
+    private SubpagesPage subpagesPage;
 
     public SeleniumPages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
@@ -45,5 +49,19 @@ public class SeleniumPages {
     		logoutComponent = new LogoutComponent(driverProvider);
     	}
     	return logoutComponent;
+    }
+    
+    public SidePanel sidePanel() {
+    	if (sidePanel == null) {
+    		sidePanel = new SidePanel(driverProvider);
+    	}
+    	return sidePanel;
+    }
+    
+    public SubpagesPage subpagesPage() {
+    	if (subpagesPage == null) {
+    		subpagesPage = new SubpagesPage(driverProvider);
+    	}
+    	return subpagesPage;
     }
 }
