@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SubpagesPage extends BasePage {
 
-	private static final By SELECT_ID = By.id("addlist-primary");
+	private static final By SELECT_ID = By.xpath("//*[@id=\"addlist-primary\"]/select");
 	
 	public SubpagesPage(WebDriverProvider driverProvider) {
 		super(driverProvider);
@@ -14,7 +14,6 @@ public class SubpagesPage extends BasePage {
 	
 	public void goToCreateGallery(){
 		Select select = new Select(findElement(SELECT_ID));
-		select.deselectAll();
 		select.selectByVisibleText("Galeria");
 	}
 	
