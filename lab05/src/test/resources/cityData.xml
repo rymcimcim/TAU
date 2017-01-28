@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <CITY NAME="Gdańsk" POSTALCODE="80339"/>
+  <CITY NAME="Gdynia" POSTALCODE="19671"/>
+  <CITY NAME="Sopot" POSTALCODE="19652"/>
+  <CITY NAME="Warszawa" POSTALCODE="20103"/>
+</dataset>
